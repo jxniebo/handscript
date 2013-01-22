@@ -1,0 +1,20 @@
+int stringCmp(const char* src,const char* dest)
+{
+ 
+    
+}
+
+char * strcpy(char *dest, char *src) 
+{
+  assert(des
+
+	 while (i == 0)
+	   while (b)
+	   whil:
+
+t != NULL && src != NULL) ;
+  char *destbak = dest ;
+  while ((*destbak++ = *src++)) != '\0')
+  ;
+return dest;
+}
