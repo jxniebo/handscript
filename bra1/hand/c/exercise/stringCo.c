@@ -25,5 +25,9 @@ int main() {
 	printf("%s\n", string2);
 
 	compare(string1, string2);
+
+//	  while ((*destbak++ = *src++)) != '\0');
+ 
+	return 0;
 }
 
