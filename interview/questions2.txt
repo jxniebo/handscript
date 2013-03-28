@@ -1,0 +1,204 @@
+NAME_______________________	Cell Phone________________________
+
+Q:[C/C++] What will be the printed value of x?
+         { 
+            int x = 2;
+           { 
+             int x;
+             x += 2;
+           }
+           printf("%d",x);
+         }
+
+Q:[C/C++] How many lines will this loop print?
+
+
+         int i;
+         for (i=0; i<100; ++i) if (i=4) printf("hello\n");
+
+Q:[C/C++] What will be the printed values of x, y and z?
+
+
+         int x,y,z;
+         x = 2;
+         y = 5;
+         z = x+++y;
+         printf("%d %d %d",x,y,z);
+
+Q:[C/C++] Which of one of these represents an assignment operation? [C/C++]
+
+1. C c1 = c2; 
+2. c3 = c4; 
+3. both 
+
+Q:[C/C++] describe the Differences between 
+	delete
+	and delete[]
+
+
+Q:[C/C++] Which line is wrong?  
+ short* p = new short;                 
+ short** p = new short[900];             
+ short* p = new short(900);  
+
+Q:[C/C++] How was the memory, released in the following line, allocated correctly 	by delete[] p;   ?
+
+ short* p = new *short;           
+ short* p = new short[900];            
+ short* p = new short(900);  
+
+Q:[C/C++] What means "operator int()" as a method of class "myclass"?
+
+Q:[C/C++] How often is the destructor of "myclass" called in the following program:
+
+void test()
+{
+     myclass a, b;
+     myclass* pb = new myclass;
+}
+
+Q:[C/C++] purpose of c++ template
+
+
+
+
+Q:[Java] What is the superclass of all Exceptions and Errors in Java?
+
+Q:[Java] What package is the Vector object part of?
+
+Q:[Java] (True/False) (T/F) A Vector can hold any type of Java object or primitive.
+
+Q:[Java] What two objects are passed to a Servlet' doGet() method?
+
+Q:[Java] What is the Java keyword used in method declarations to indicate that the 
+method could potentially cause an exception?
+
+Q:[Java] What is  Anonymous Inner class 
+
+Q:[Java] What's the difference bwteen finally, finalize, and final
+
+Q:[Java] What's the difference bwteen Thread and Runnable and ThreadGroup
+
+Q:[Java] Which of the following statements are true? 
+	A method can throw an Exception 
+	A method can return an Exception 
+
+Q:[Java] What's the difference between int and Integer
+
+Q:[Java] What's the difference between Hashtable and HashMap
+
+Q:[Java] How to stop a running Thread ?
+
+Q:[Java] What's the difference between Serializable, Cloneable ?
+
+Q:[Java] What's difference between  Cloneable and clone
+
+Q:[Java] What's the difference between Runtime	and System ?
+
+Q:[Java] How to write a java RMI service ?
+
+Q:[Java] How to implemnt a JNI function ?
+
+Q:[Java] what's difference between green thread and native thread ?
+
+
+Q:[Java] Can there be an abstract class with no abstract methods in it?   (CoreJava)
+
+Q:[Java] Can an Interface have an inner class? 
+
+Q:[Java] Can we define private and protected modifiers for variables in interfaces?  
+
+
+
+Q:[OS] What's the difference between  heap and stack ?
+
+Q:[OS] What's the difference between  process and thread ?
+
+Q:[OS] What's the difference of TCP and UDP ?
+
+Q:[OS] How to write a server socket program ?
+
+Q:[OS] What's the difference between  HTTP Get and POST ?
+
+Q:[OS] How to prevent memory leak in C/C++/Java ?
+
+
+Q:[C/C++] Write a string copy function in C 
+
+
+Q:[C/C++] Write a reverse String function in Java
+
+
+Q:[Test] Write a simple JUnit Program
+
+
+Q:[JS] What's the difference between Javascript array and object
+
+Q:[JS] Tell 3 difference in Javascript between IE and Mozilla.
+
+Q:[JS] How can a javascript access the boundary of cross-domain issue?
+
+Q:[JS] Write a javascript function to move a text box from left of screen to right screen.
+
+Q:[JS] How to output debugging information in javascript
+
+Q:[JS] What is AJAX ?
+
+Q:[JS] How to do inheritance in Javascript?
+
+
+Q:[PHP] What is the difference between php programming and asp programming
+
+Q:[PHP] in PHP, what's the difference between $_POST and $HTTP_POST_VARS
+
+Q:[PHP] Write a simple php program to display current date and time
+
+Q:[PHP] What does extract() function do?
+
+Q:[PHP] How to connect to a database inside php? Which function to call?
+
+
+
+Q:[NET] How DNS works?
+
+Q:[NET] How to do load balancing through DNS?
+
+Q:[NET] What is NAT?
+
+Q:[NET] If you are going to setup a web, email, ftp, telnet server, how do you start?
+
+
+Q:[DESIGN] What is design pattern?
+
+Q:[DESIGN] Name 3 design pattern?
+
+Q:[DESIGN] Tell one of the design pattern you used in your actual project.
+
+Q:[DESIGN] What is state diagram?
+
+Q:[XSLT] What is XSLT?
+
+Q:[XSLT] Why use XSLT?
+
+Q:[XSLT] Write an XSLT to remove all xml tags.
+
+Q:[CSS] Why use CSS?
+
+Q:[CSS] Under what condition, you cannot use CSS?
+
+Q:[CSS] Difference between display and visibility?
+
+Q:[CSS] Difference between display:none and visibility:hidden?
+
+Q:[WIN32] Difference between ReadFile and fread ?
+
+Q:[WIN32] How to define multi-dimensional array in VB?
+
+Q:[WIN32] How to write a Win32 C++ Program?
+
+
+
+Q:[SQL] Write a simple SQL statement
+
+
+Expectation Wage/Salary:_________ 	Current Wage/Salary:________________

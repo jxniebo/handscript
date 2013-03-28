@@ -1,0 +1,30 @@
+;iteration computing procedure
+(define (sum-integers a b) (sum-inc a b 0))
+(define (sum-inc a b c)
+  (if (> a b)
+      c
+      (sum-inc (+ a 1) b (+ a c))))
+
+;recursive computing procedure
+(define (prototype a) a)
+(define (sum-integers-v2 a b)
+  (if ( > a b)
+      0
+      (+ a (sum-integers-v2 (+ 1 a) b))))
+(sum-integers 3 11)
+(sum-integers-v2 3 12)
+
+(define (cube-sum-integers a b)
+  (if (> a b)
+      0
+      (+ (cube a) (cube-sum-integers (+ 1 a) b))))
+(define (cube a) (* a a a))
+(cube-sum-integers 3 5)
+
+
+(define (procedure-extraction a b procedure-main procedure-mini)
+  (if (> a b)
+      0
+      (+ (procedure-mini a) (procedure-main (+ 1 a) b))))
+(procedure-extraction 3 12 sum-integers-v2 prototype)
+(procedure-extraction 3 5 cube-sum-integers cube)

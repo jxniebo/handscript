@@ -1,0 +1,386 @@
+[C/C++]
+
+Q: What will be the printed value of x?
+
+
+         { int x = 2;
+           { int x;
+             x += 2;
+           }
+           printf("%d",x);
+         }
+
+Q: How many lines will this loop print?
+
+
+         int i;
+         for (i=0; i<100; ++i) if (i=4) printf("hello\n");
+
+Q: What will be the printed values of x, y and z?
+
+
+         int x,y,z;
+         x = 2;
+         y = 5;
+         z = x+++y;
+         printf("%d %d %d",x,y,z);
+
+Q: Which of one of these represents an assignment operation?
+1. C c1 = c2; 
+2. c3 = c4; 
+3. both 
+
+Q: Differences 
+delete
+and delete[]
+
+
+Q: Which line is wrong?  
+ short* p = new short;                 
+ short** p = new short[900];             
+ short* p = new short(900);  
+
+Q: How was the memory, released in the following line, allocated correctly by 
+delete[] p;   ?
+
+ short* p = new *short;           
+ short* p = new short[900];            
+ short* p = new short(900);  
+
+Q: What means "operator int()" as a method of class "myclass"?
+
+Q: How often is the destructor of "myclass" called in the following program:
+
+void test()
+{
+     myclass a, b;
+     myclass* pb = new myclass;
+}
+
+Q:purpose of c++ template
+
+
+[Java]
+
+Q: Can there be an abstract class with no abstract methods in it?   (CoreJava)
+Yes
+abstract class has at least one abstract method, could have non-abstract method
+
+Q: Can an Interface have an inner class? 
+Yes public interface abc { static int i=0; void dd(); class a1 { a1() { int j; System.out.println("in interfia"); }; public static void main(String a1[]) { System.out.println("in interfia"); } } } 
+
+Q: Can we define private and protected modifiers for variables in interfaces?   (CoreJava) 
+Answer   No because the interface will be implemented by class, if it's private or protected,
+the member won't be implemented  
+only public and abstract modifiers are allowed for methods in interface.
+
+Q: What is Externalizable?   (CoreJava) 
+Answer   Externalizable is an Interface that extends Serializable Interface. And sends data into Streams in Compressed Format. It has two methods, writeExternal(ObjectOuput out) and readExternal(ObjectInput in)  
+
+externalizable is in java.io
+
+Q: What is the superclass of all Exceptions and Errors in Java?
+
+The Throwable class is the superclass of all errors and exceptions in the Java language. 
+
+Q: What package is the Vector object part of?
+
+java.util.Vector
+
+Q: (T/F) A Vector can hold any type of Java object or primitive.
+
+Vectors can hold only Objects and not primitive types (eg, int).
+
+Q: What two objects are passed to a Servlet' doGet() method?
+
+doGet(HttpServletRequest req, HttpServletResponse res)
+
+Q: What is the Java keyword used in method declarations to indicate that the 
+method could potentially cause an exception?
+
+throws
+
+Q: What is  Anonymous Inner class 
+
+There are two additional types of inner classes. You can declare an inner class within the body of a method. Such a class is known as a local inner class. You can also declare an inner class within the body of a method without naming it. These classes are known as anonymous inner classes.
+
+Q: What's the difference bwteen finally, finalize, and final
+
+
+    final constant declaration.
+    finally The finally block always executes when the try block exits, except System.exit(0) call. This ensures that the finally block is executed even if an unexpected exception occurs. But finally is useful for more than just exception handling - it allows the programmer to avoid having cleanup code accidentally bypassed by a return, continue, or break. Putting cleanup code in a finally block is always a good practice, even when no exceptions are anticipated.
+    finalize() method helps in garbage collection. A method that is invoked before an object is discarded by the garbage collector, allowing it to clean up its state. Should not be used to release non-memory resources like file handles, sockets, database connections etc because Java has only a finite number of these resources and you do not know when the garbage collection is going to kick in to release these non-memory resources through the finalize() method.
+
+
+Q: What's the difference between Thread and Runnable and ThreadGroup
+
+Here are some of my thoughts on whether I should use Thread or Runnable for implementing task in Java, though you have another choice as "Callable" for implementing thread which we will discuss later.
+
+1) Java doesn't support multiple inheritance, which means you can only extend one class in Java so once you extended Thread class you lost your chance and can not extend or inherit another class in Java.
+
+2) In Object oriented programming extending a class generally means adding new functionality, modifying or improving behaviors. If we are not making any modification on Thread than use Runnable interface instead.
+
+3) Runnable interface represent a Task which can be executed by either plain Thread or Executors or any other means. so logical separation of Task as Runnable than Thread is good design decision.
+
+4) Separating task as Runnable means we can reuse the task and also has liberty to execute it from different means. since you can not restart a Thread once it completes. again Runnable vs Thread for task, Runnable is winner.
+
+5) Java designer recognizes this and that's why Executors accept Runnable as Task and they have worker thread which executes those task.
+
+6) Inheriting all Thread methods are additional overhead just for representing a Task which can can be done easily with Runnable.
+
+
+Thread groups offer a convenient way to manage groups of threads as a unit. This is particularly valuable in situations in which you want to suspend and resume a number of related threads.
+
+
+Q: Which of the following statements is/are true? 
+	A method can throw an Exception 
+	A method can return an Exception 
+
+both
+
+Q: What's the difference between int and Integer
+
+An int is a primitive. It is not an Object. An int is a high performance, streamlined beast for calculating numbers in the range -2,147,483,648 [-231] aka Integer.MIN_VALUE to +2,147,483,647 [2 31-1] aka Integer.MAX_VALUE. An int is a bare bones 32-bit chunk of information. int variables are mutable. Unless you mark them final, you can change their value at any time.
+
+An Integer, is a Object that contains a single int field. An Integer is much bulkier than an int. It is sort like a Fedex box to contain the int. Integers are immutable. If you want to affect the value of a Integer variable, the only way is to create a new Integer object and discard the old one.
+
+Q: What's the difference between Hashtable and HashMap
+
+Both provide key-value access to data. The Hashtable is one of the original collection classes in Java. HashMap is part of the new Collections Framework, added with Java 2, v1.2.
+
+The key difference between the two is that access to the Hashtable is synchronized on the table while access to the HashMap isn't. You can add it, but it isn't there by default.
+
+Another difference is that iterator in the HashMap is fail-safe while the enumerator for the Hashtable isn't. If you change the map while iterating, you'll know.
+
+And, a third difference is that HashMap permits null values in it, while Hashtable doesn't.
+
+For new code, I would tend to always use HashMap.
+
+Examples here:
+
+http://www.pakzilla.com/2009/08/24/hashmap-vs-hashtable-vs-hashset/
+
+Hashtable
+
+Hashtable is basically a datastructure to retain values of key-value pair.
+
+    It didn’t allow null for both key and value. You will get NullPointerException if you add null value.
+    It is synchronized. So it comes with its cost. Only one thread can access in one time
+
+Hashtable<Integer,String>; cityTable = new Hashtable<Integer,String>();
+cityTable.put(1, "Lahore");
+cityTable.put(2, "Karachi");
+cityTable.put(3, null); /* NullPointerEcxeption at runtime*/
+ 
+System.out.println(cityTable.get(1));
+System.out.println(cityTable.get(2));
+System.out.println(cityTable.get(3));
+
+HashMap
+
+Like Hashtable it also accepts key value pair.
+
+    It allows null for both key and value
+    It is unsynchronized. So come up with better performance
+
+HashMap<Integer,String> productMap = new HashMap<Integer,String>();
+productMap.put(1, "Keys");
+productMap.put(2, null);
+
+HashSet
+
+HashSet does not allow duplicate values. It provides add method rather put method. You also use its contain method to check whether the object is already available in HashSet. HashSet can be used where you want to maintain a unique list.
+	
+HashSet<String> stateSet = new HashSet<String>();
+stateSet.add ("CA");
+stateSet.add ("WI");
+stateSet.add ("NY");
+ 
+if (stateSet.contains("PB")) /* if CA, it will not add but shows following message*/
+     System.out.println("Already found");
+else
+    stateSet.add("PB");
+
+
+Q: How to stop a running Thread ?
+
+public void run(){
+
+    if(isDone)
+    {     
+      return;
+    }
+
+}
+
+or 
+
+if(thread != null)
+{
+    Thread t1 = thread;
+    thread = null;
+    t1.interrupt();
+}
+
+Q: What's the difference between Serializable, Cloneable ?
+
+ Clonable interface is used to make a clone of a object,every time create a new instance by new operator is costly in terms of JVM ,resource & performace. so we can create similiar type of instance with the help of already been created instance by using clone()
+
+Serialization is a process to convert your object into bitstream and send accross the network and deserialze at other end,process like Marshling.used in client-server archicture To understand the difference between clone and serialization, initially you should understand the difference between Deep Copy and Shallow Copy.
+
+In the java doc API for clone() of Object class, it is clearly mentioned that clone is a shallow copy and not deep copy.
+
+Serialization indirectly does the Deep copy. 
+
+Example here
+
+http://www.javabeat.net/qna/11-what-is-the-difference-between-cloneable-and-serialization-of-an-object/
+
+ The above output clearly shows when you change the String object of original object it does not reflect over cloned object. But for the StringBuffer and ArrayList every thing changed either in original or cloned objects get reflected over the other.
+
+When the object is serialized and got a new instance using ObjectOutputStream and ObjectInputStream the changes for the String Buffer and ArrayList will never be reflected. 
+
+Q: What's difference between Cloneable and clone
+
+ The clone( ) method generates a duplicate copy of the object on which it is called. Only classes that implement the Cloneable interface can be cloned.
+
+The Cloneable interface defines no members. It is used to indicate that a class allows a bitwise copy of an object (that is, a clone) to be made. If you try to call clone( ) on a class that does not implement Cloneable, a CloneNotSupportedException is thrown. When a clone is made, the constructor for the object being cloned is not called. A clone is simply an exact copy of the original.
+
+Cloning is a potentially dangerous action, because it can cause unintended side effects. For example, if the object being cloned contains a reference variable called obRef, then when the clone is made, obRef in the clone will refer to the same object as does obRef in the original. If the clone makes a change to the contents of the object referred to by obRef, then it will be changed for the original object, too. Here is another example. If an object opens an I/O stream and is then cloned, two objects will be capable of operating on the same stream. Further, if one of these objects closes the stream, the other object might still attempt to write to it, causing an error.
+
+Because cloning can cause problems, clone( ) is declared as protected inside Object. This means that it must either be called from within a method defined by the class that implements Cloneable, or it must be explicitly overridden by that class so that it is public. Let's look at an example of each approach.
+
+Q: What's the difference between Runtime and System ?
+
+My guess (remember, its a guess), is that methods in the System class are there for convenience. For example, System.gc(); is static, where Runtime.gc(); is an instance method. This makes the call easier to make, since you don't need to obtain a Runtime instance.
+
+Q: How to write a java RMI service ?
+
+Q: How to implemnt a JNI function ?
+
+http://home.pacifier.com/~mmead/jni/cs510ajp/example_details.html
+
+Q: what's difference between green thread and native thread ?
+
+Both green and native threads are mechanisms to support multithreaded execution of Java programs. Some JDK distributions (such as Blackdown's) include the option to run with either type of threading.
+
+Native threads use the operating system's native ability to manage multi-threaded processes - in particular, they use the pthread library. When you run with native threads, the kernel schedules and manages the various threads that make up the process.
+
+Green threads emulate multithreaded environments without relying on any native OS capabilities. They run code in user space that manages and schedules threads; Sun wrote green threads to enable Java to work in environments that do not have native thread support.
+
+There are some important differences between using the two in a Linux environment:
+
+    Native threads can switch between threads pre-emptively, switching control from a running thread to a non-running thread at any time. Green threads only switch when control is explicitly given up by a thread (Thread.yield(), Object.wait(), etc.) or a thread performs a blocking operation (read(), etc.).
+
+    On multi-CPU machines, native threads can run more than one thread simultaneously by assigning different threads to different CPUs. Green threads run on only one CPU.
+
+    Native threads create the appearance that many Java processes are running: each thread takes up its own entry in the process table. One clue that these are all threads of the same process is that the memory size is identical for all the threads - they are all using the same memory.
+
+    Unfortunately, this behavior limits the scalability of Java on Linux. The process table is not infinitely large, and processes can only create a limited number of threads before running out of system resources or hitting configured limits.
+
+[System]
+
+Q: What's the difference between  heap and stack ?
+
+Q: What's the difference between  process and thread ?
+
+Q: What's the difference of TCP and UDP ?
+
+Q: How to write a server socket program ?
+
+Q: What's the difference between  HTTP Get and POST?
+
+Q: How to prevent memory leak in C/C++/Java ?
+
+[Programming]
+
+Q: Write a string copy function in C 
+and a reverse String function in Java
+
+
+[Test]
+
+Q: Write a simple JUnit Program
+
+[SQL]
+
+Q: sql pagination
+
+ LIMIT and OFFSET allow you to retrieve just a portion of the rows that are generated by the rest of the query:
+
+SELECT select_list
+    FROM table_expression
+    [LIMIT { number | ALL }] [OFFSET number]
+    
+Q: what is two phase commit, how Oracle handle that?
+
+Q: what happened for select deptno, AVG(sal) from emp where AVG(sal)>2000 group by deptno
+
+Q: what is the ERD and DFD?
+ERD: entity relationship diagrams (ERDs), 
+DFD: explain how each connects to the data-flow diagram (DFD) of the process model
+
+Q: what is the fastest group by? (grouyBy or distinct, which is faster?
+
+If you have an index on profession, these two are synonyms.
+
+If you don't, then use DISTINCT.
+
+GROUP BY in MySQL sorts results. You can even do:
+
+SELECT u.profession FROM users u GROUP BY u.profession DESC
+
+and get your professions sorted in DESC order.
+
+DISTINCT creates a temporary table and uses it for storing duplicates. GROUP BY does the same, but sortes the distinct results afterwards.
+
+So
+
+SELECT DISTINCT u.profession FROM users u
+
+is faster, if you don't have an index on profession.
+
+
+Q: what is the 5 biggest ineffience sql ?
+
+Q: what is the difference between char and varchar2?
+      When you assign a character value to a CHAR variable, if the value is shorter than the declared length of the variable, PL/SQL blank-pads the value to the declared length.
+If either value in a comparison has datatype VARCHAR2, non-blank-padding semantics are used.
+
+Q: what is left join, right join and full join? Example.
+
+The FULL JOIN keyword return rows when there is a match in one of the tables.
+
+The LEFT JOIN keyword returns all rows from the left table (table_name1), even if there are no matches in the right table (table_name2).
+
+The RIGHT JOIN keyword returns all the rows from the right table (table_name2), even if there are no matches in the left table (table_name1).
+
+Q: what is the difference between store procedure and function?
+
+    Procedure can return zero or n values whereas function can return one value which is mandatory.
+    Procedures can have input/output parameters for it whereas functions can have only input parameters.
+    Procedure allows select as well as DML statement in it whereas function allows only select statement in it.
+    Functions can be called from procedure whereas procedures cannot be called from function.
+    Exception can be handled by try-catch block in a procedure whereas try-catch block cannot be used in a function.
+    We can go for transaction management in procedure whereas we can't go in function.
+    Procedures can not be utilized in a select statement whereas function can be embedded in a select statement.
+
+    UDF can be used in the SQL statements anywhere in the WHERE/HAVING/SELECT section where as Stored procedures cannot be.
+    UDFs that return tables can be treated as another rowset. This can be used in JOINs with other tables.
+    Inline UDF's can be though of as views that take parameters and can be used in JOINs and other Rowset operations.
+
+In depth
+Stored Procedure
+
+A Stored Procedure is a program (or procedure) which is physically stored within a database. They are usually written in a proprietary database language like PL/SQL for Oracle database or PL/PgSQL for PostgreSQL. The advantage of a stored procedure is that when it is run, in response to a user request, it is run directly by the database engine, which usually runs on a separate database server. As such, it has direct access to the data it needs to manipulate and only needs to send its results back to the user, doing away with the overhead of communicating large amounts of data back and forth.
+User-defined Function
+
+A user-defined function is a routine that encapsulates useful logic for use in other queries. While views are limited to a single SELECT statement, user-defined functions can have multiple SELECT statements and provide more powerful logic than is possible with views.
+
+User defined functions have three main categories:
+
+    Scalar-valued function - returns a scalar value such as an integer or a timestamp. Can be used as column name in queries.
+    Inline function - can contain a single SELECT statement.
+    Table-valued function - can contain any number of statements that populate the table variable to be returned. They become handy when you need to return a set of rows, but you can't enclose the logic for getting this rowset in a single SELECT statement.
+
+

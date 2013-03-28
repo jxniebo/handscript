@@ -1,0 +1,37 @@
+;;;Below is decouppling compute flow modules
+
+
+;;Given list-t as test list (1 2 3 4 5)
+(define list-t (list 1 2 3 4 5))
+
+
+;;procedures
+;filters odd value for each list member's square and sums them up
+(define (sum-square-odd list)
+  (if (null? list)
+      0
+      (+ (sum-square-odd (cdr list))
+         (if (odd? (car list))
+             (* (car list) (car list))
+             0))))
+
+(define (sum-square-odd-map list)
+  (sum-odd (square-map list)))
+
+;uses sub-procedure to create modules
+(define (square-map list)
+  (if (null? list)
+      ()
+      (cons (* (car list) (car list))
+            (square-map (cdr list)))))
+
+(define (sum-odd list)
+  (if (null? list)
+      0
+      (+ (if (odd? (car list))
+             (car list)
+             0)
+         (sum-odd (cdr list)))))
+
+;uses more abstract modules to decouple codes
+;modules we need: enumerator accumulator filter map
