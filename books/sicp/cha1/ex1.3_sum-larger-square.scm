@@ -1,0 +1,6 @@
+(define (sum-larger-square x y z)
+  (cond ((and (> x y) (> z y)) (sum-square x z))
+        ((and (> x z) (> y z)) (sum-square x y))
+        (else (sum-square y z))))
+(define (sum-square a b) (+ (* a a) (* b b)))
+(sum-larger-square 23 2 4)
