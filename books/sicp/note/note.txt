@@ -1,0 +1,5 @@
+Note
+
+1. cons not only can combine numbers but also can combine pairs, as the sequence, pairs can used
+to construct all the data types
+>list (cons 1 (cons 2 (cons 3 (cons 4 ()))))
